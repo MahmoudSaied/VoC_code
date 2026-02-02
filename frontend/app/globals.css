@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  /* Calo Brand Colors */
+  --calo-green-primary: #24A170;
+  --calo-green-dark: #114B34;
+  --calo-green-text: #28864C;
+  --calo-background-mint: #EAF7F2;
+  --calo-background-secondary: #F5F6F7;
+  
+  --calo-text-main: #343B42;
+  --calo-text-secondary: #5E656B;
+  --calo-border: #999999;
+
+  --background: #EAF7F2; /* Setting default background to Mint */
+  --foreground: #343B42;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter); /* Changed to Inter */
+  
+  /* Expose Calo colors to Tailwind */
+  --color-calo-primary: var(--calo-green-primary);
+  --color-calo-dark: var(--calo-green-dark);
+  --color-calo-text-green: var(--calo-green-text);
+  --color-calo-mint: var(--calo-background-mint);
+  --color-calo-gray: var(--calo-background-secondary);
+  --color-calo-text-main: var(--calo-text-main);
+  --color-calo-text-secondary: var(--calo-text-secondary);
+  --color-calo-border: var(--calo-border);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keeping dark mode same for now, or could map to dark equivalents if needed later */
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
